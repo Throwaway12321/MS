@@ -14,7 +14,7 @@ double_arr *get_determ(matrix *in){
     exit->size = in->n+1;
 
     if(in->m!=in->n){
-        printf("Matryca nie jest kwadratowa\n\n");
+        printf("Macierz nie jest kwadratowa\n\n");
         free(exit->list);
         free(exit);
         free(d_pos);
@@ -36,7 +36,7 @@ double_arr *get_determ(matrix *in){
         free(d_neg);
         return exit;
     } else if(in->m==0){
-        printf("Blad: matryca zerowa\n\n");
+        printf("Blad: macierz zerowa\n\n");
         free(exit->list);
         free(exit);
         free(d_pos);
@@ -95,7 +95,7 @@ int solve_determ(double_arr *in){
     }
 
     for(i=0; i<in->size-1; i++)
-        printf("x%d=%f\n", i, in->list[i]/in->list[in->size-1]);
+        printf("x%d=%f\n", i+1, in->list[i]/in->list[in->size-1]);
     printf("\n");
     free_d_arr(in);
     return 0;
