@@ -51,3 +51,22 @@ double_arr *get_determ(matrix *in){
     free(d_neg);
     return exit;
 }
+
+void free_d_arr(double_arr *in){
+    free(in->list);
+    free(in);
+}
+
+int solve_determ(double_arr *in){
+    int i;
+    if(!in->list[in->size-1]){
+        printf("Wyznacznik macierzy jest rowny 0\n\n");
+        return 1;
+    }
+
+    for(i=0; i<in->size-1; i++)
+        printf("x%d=%f\n", i, in->list[i]/in->list[in->size-1]);
+    printf("\n");
+    free_d_arr(in);
+    return 0;
+}
