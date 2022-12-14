@@ -1,3 +1,3 @@
 # MS
 
-Rozwiazywanie macierzy metoda rownan metoda wyznacznikow macierzy
+Rozwiązanie układów równań metodą wyznaczników macierzy
