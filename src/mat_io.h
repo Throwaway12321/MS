@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 typedef struct{
-    double *list *solutions;
+    double *list, *solutions;
     int m, n;
 } matrix;
 
