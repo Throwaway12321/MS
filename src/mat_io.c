@@ -8,7 +8,7 @@ matrix *make_matrix(FILE *in){
     int i;
     matrix *exit = malloc(sizeof(*exit));
 
-    if(fscanf(in, "%d %d", &(exit.m), &(exit.n))!=2){
+    if(fscanf(in, "%d %d", &(exit->m), &(exit->n))!=2){
         free(exit);
         return NULL;
     }
@@ -35,7 +35,7 @@ matrix *make_matrix(FILE *in){
         }
 
     for(i=0; i<exit->n; i++)
-        if(fscanf(in, "%f", &exit->solutions[i])!=1){
+        if(fscanf(in, "%lf", &exit->solutions[i])!=1){
             free(exit);
             free(exit->list);
             free(exit->solutions);
