@@ -13,6 +13,36 @@ double_arr *get_determ(matrix *in){
 
     exit->size = in->n+1;
 
+    if(in->m!=in->n){
+        printf("Matryca nie jest kwadratowa\n\n");
+        free(exit->list);
+        free(exit);
+        free(d_pos);
+        free(d_neg);
+        return NULL;
+    }
+
+    if(in->m==1){
+        exit->list[1]=in->list[0];
+        exit->list[0]=in->solutions[0];
+        free(d_pos);
+        free(d_neg);
+        return exit;
+    } else if(in->m==2){
+        exit->list[2]=in->list[0]*in->list[3]-in->list[1]*in->list[2];
+        exit->list[0]=in->solutions[0]*in->list[3]-in->list[1]*in->solutions[1];
+        exit->list[1]=in->solutions[1]*in->list[0]-in->list[2]*in->solutions[0];
+        free(d_pos);
+        free(d_neg);
+        return exit;
+    } else if(in->m==0){
+        printf("Blad: matryca zerowa\n\n");
+        free(exit->list);
+        free(exit);
+        free(d_pos);
+        free(d_neg);
+        return NULL;
+    }
 
     for(i=0; i<=in->m; i++){
         d_neg[i]=1;
